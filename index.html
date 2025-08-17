@@ -7,7 +7,11 @@
   <title>Online Tuition Classes</title>
   <style>
     /* Reset */
-    * {margin:0; padding:0; box-sizing:border-box;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -15,14 +19,17 @@
       color: #222;
       line-height: 1.6;
       scroll-behavior: smooth;
-      transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+      transition: background-color 0.3s, color 0.3s;
     }
 
+    /* Header */
     header {
       position: fixed;
-      top: 0; left: 0; width: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
@@ -30,12 +37,14 @@
       padding: 15px 50px;
       transition: background-color 0.3s;
     }
+
     header h1 {
       font-family: Georgia, serif;
       font-size: 1.5rem;
       color: #800000; /* maroon */
       font-weight: bold;
     }
+
     nav a {
       margin: 0 15px;
       text-decoration: none;
@@ -43,13 +52,16 @@
       font-weight: 500;
       transition: color 0.3s;
     }
-    nav a:hover {color: #b8860b;} /* gold */
+
+    nav a:hover {
+      color: #b8860b; /* gold */
+    }
 
     /* Hero Section */
     .hero {
       height: 60vh;
-      background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-                  url('https://images.unsplash.com/photo-1529070538774-1843cb3265df') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://images.unsplash.com/photo-1529070538774-1843cb3265df') center/cover no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -59,16 +71,19 @@
       padding: 0 20px;
       position: relative;
     }
+
     .hero h2 {
       font-size: 2.5rem;
       font-family: Georgia, serif;
       margin-bottom: 20px;
     }
+
     .hero p {
       font-size: 2.0rem;
       margin-bottom: 30px;
       box-shadow: #121212 0px 0px 10px 0px;
     }
+
     .hero button {
       padding: 12px 28px;
       border: none;
@@ -79,8 +94,9 @@
       cursor: pointer;
       transition: background-color 0.3s, transform 0.3s;
     }
+
     .hero button:hover {
-      background:#a67c00;
+      background: #a67c00;
       transform: scale(1.05);
     }
 
@@ -92,6 +108,7 @@
       z-index: 2;
       transition: background-color 0.3s;
     }
+
     .classes h2 {
       text-align: center;
       font-family: Georgia, serif;
@@ -99,6 +116,7 @@
       margin-bottom: 40px;
       color: #800000;
     }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -106,6 +124,7 @@
       max-width: 800px;
       margin: auto;
     }
+
     .card {
       border: 1px solid #ddd;
       border-radius: 12px;
@@ -114,19 +133,22 @@
       justify-content: space-between;
       align-items: center;
       gap: 15px;
-      background-color: #fff; /* Explicitly set background for dark mode override */
+      background-color: #fff;
       transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s, border-color 0.3s;
     }
+
     .card:hover {
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       transform: translateY(-5px);
     }
+
     .card h3 {
-      color:#333;
+      color: #333;
       flex: 1;
       min-width: 100px;
       transition: color 0.3s;
     }
+
     .card .type {
       color: #555;
       font-style: italic;
@@ -134,12 +156,14 @@
       text-align: center;
       transition: color 0.3s;
     }
+
     .card .price {
-      color:#800000; 
-      font-weight:bold;
+      color: #800000;
+      font-weight: bold;
       min-width: 120px;
       text-align: right;
     }
+
     .card button {
       padding: 8px 18px;
       border: none;
@@ -149,8 +173,9 @@
       cursor: pointer;
       transition: background-color 0.3s, transform 0.3s;
     }
+
     .card button:hover {
-      background:#4d0000;
+      background: #4d0000;
       transform: scale(1.05);
     }
 
@@ -164,33 +189,44 @@
       position: relative;
       z-index: 2;
     }
-    footer a {color: #b8860b; text-decoration: none;}
-    
-    /* --- NEW: DARK MODE STYLES --- */
+
+    footer a {
+      color: #b8860b;
+      text-decoration: none;
+    }
+
+    /* Dark Mode Styles */
     body.dark-mode {
       background-color: #121212;
       color: #e0e0e0;
     }
+
     body.dark-mode header {
       background-color: #1f1f1f;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     }
+
     body.dark-mode nav a {
       color: #e0e0e0;
     }
+
     body.dark-mode .classes {
       background-color: #121212;
     }
+
     body.dark-mode .card {
       background-color: #2a2a2a;
       border-color: #444;
     }
+
     body.dark-mode .card:hover {
-        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
+
     body.dark-mode .card h3 {
       color: #f5f5f5;
     }
+
     body.dark-mode .card .type {
       color: #bbb;
     }
@@ -208,6 +244,7 @@
       font-size: 20px;
       z-index: 1000;
     }
+
     .menu {
       display: none;
       position: fixed;
@@ -216,14 +253,16 @@
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       padding: 10px;
       z-index: 1000;
     }
+
     body.dark-mode .menu {
-        background-color: #2a2a2a;
-        border-color: #444;
+      background-color: #2a2a2a;
+      border-color: #444;
     }
+
     .menu button {
       display: block;
       width: 100%;
@@ -235,58 +274,140 @@
       border-radius: 6px;
       cursor: pointer;
     }
-    .menu button:hover {background:#a67c00;}
 
+    .menu button:hover {
+      background: #a67c00;
+    }
 
+    /* Subject List Dropdown */
     .key-icon {
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 10px;
-  transition: transform 0.3s ease;
-  font-size: 18px;
-}
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+      font-size: 18px;
+    }
 
-.card.open .key-icon {
-  transform: rotate(90deg);
-}
+    .card.open .key-icon {
+      transform: rotate(90deg);
+    }
 
-.subjects-list {
-  display: none;
-  margin: 10px 0;
-  padding-left: 15px;
-  list-style-type: disc;
-}
+    .subjects-list {
+      display: none;
+      margin: 10px 0;
+      padding-left: 15px;
+      list-style-type: disc;
+    }
 
-.card.open .subjects-list {
-  display: block;
-}
+    .card.open .subjects-list {
+      display: block;
+    }
 
+    /* WhatsApp Floating Icon */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 210px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      z-index: 1000;
+    }
 
+    .whatsapp-float img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
 
+    .whatsapp-float img:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      /* Header */
+      header {
+        padding: 10px 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
 
-.whatsapp-float {
-  position: fixed;
-  bottom: 210px;  /* increase from 20px → pushes it above accessibility menu */
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  z-index: 1000;
-}
+      /* Hero Section */
+      .hero {
+        height: 80vh;
+        padding: 0 15px;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+      .hero button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
 
+      /* Classes Section */
+      .classes {
+        padding: 50px 20px;
+      }
+      .classes h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+      .grid {
+        gap: 15px;
+      }
 
-.whatsapp-float img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
+      /* Cards */
+      .card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+      .card h3,
+      .card .type,
+      .card button {
+        margin-bottom: 10px;
+      }
+      .card .price {
+        text-align: left;
+        width: 100%;
+      }
+      
+      /* Subjects List */
+      .subjects-list {
+        margin: 5px 0 10px 15px;
+        padding-left: 0;
+      }
 
-.whatsapp-float img:hover {
-  transform: scale(1.1);
-}
-
-
+      /* Accessibility and WhatsApp Float */
+      .accessibility,
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+      }
+      
+      .whatsapp-float {
+        bottom: 80px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -311,122 +432,99 @@
   <h2>Our Tuition Plans</h2>
   <div class="grid">
     <div class="card">
-  <h3>2nd Class</h3>
-  <span class="type">Subjects  <span class="key-icon" onclick="toggleSubjects(this)">></span>
+      <h3>2nd Class</h3>
+      <span class="type">Subjects <span class="key-icon" onclick="toggleSubjects(this)">></span>
+        <ul class="subjects-list">
+          <li>Maths</li>
+          <li>English</li>
+          <li>EVS</li>
+          <li>Hindi</li>
+          <li>GK</li>
+        </ul>
+      </span>
+      <button onclick="openWhatsApp()">Contact Us</button>
+    </div>
 
-  <!-- Hidden subjects list -->
-  <ul class="subjects-list">
-    <li>Maths</li>
-    <li>English</li>
-    <li>EVS</li>
-    <li>Hindi</li>
-    <li>GK</li>
+    <div class="card">
+      <h3>3rd Class</h3>
+      <span class="type">Subjects <span class="key-icon" onclick="toggleSubjects(this)">></span>
+        <ul class="subjects-list">
+          <li>Maths</li>
+          <li>English</li>
+          <li>EVS</li>
+          <li>Hindi</li>
+          <li>GK</li>
+        </ul>
+      </span>
+      <button onclick="openWhatsApp()">Contact Us</button>
+    </div>
 
-  </ul></span>
+    <div class="card">
+      <h3>4nd Class</h3>
+      <span class="type">Subjects <span class="key-icon" onclick="toggleSubjects(this)">></span>
+        <ul class="subjects-list">
+          <li>Maths</li>
+          <li>English</li>
+          <li>EVS/Science/Social Science</li>
+          <li>Hindi</li>
+          <li>GK</li>
+        </ul>
+      </span>
+      <button onclick="openWhatsApp()">Contact Us</button>
+    </div>
 
+    <div class="card">
+      <h3>4th Class</h3>
+      <span class="type">Subjects <span class="key-icon" onclick="toggleSubjects(this)">></span>
+        <ul class="subjects-list">
+          <li>Maths</li>
+          <li>English</li>
+          <li>EVS/Science/Social Science</li>
+          <li>Hindi</li>
+          <li>GK</li>
+        </ul>
+      </span>
+      <button onclick="openWhatsApp()">Contact Us</button>
+    </div>
 
-  <button onclick="openWhatsApp()">Contact Us</button>
-</div>
+    <div class="card">
+      <h3>6th Class</h3>
+      <span class="type">Subjects <span class="key-icon" onclick="toggleSubjects(this)">></span>
+        <ul class="subjects-list">
+          <li>Math</li>
+          <li>English</li>
+          <li>Science</li>
+          <li>Social Science</li>
+        </ul>
+      </span>
+      <button onclick="openWhatsApp()">Contact Us</button>
+    </div>
 
-        <div class="card">
-  <h3>3rd Class</h3>
-  <span class="type">Subjects  <span class="key-icon" onclick="toggleSubjects(this)">></span>
+    <div class="card">
+      <h3>7th Class</h3>
+      <span class="type">Subjects <span class="key-icon" onclick="toggleSubjects(this)">></span>
+        <ul class="subjects-list">
+          <li>Maths</li>
+          <li>English</li>
+          <li>Science</li>
+          <li>Social Science</li>
+        </ul>
+      </span>
+      <button onclick="openWhatsApp()">Contact Us</button>
+    </div>
 
-  <!-- Hidden subjects list -->
-  <ul class="subjects-list">
-    <li>Maths</li>
-    <li>English</li>
-    <li>EVS</li>
-    <li>Hindi</li>
-    <li>GK</li>
-    
-  </ul></span>
-
-
-  <button onclick="openWhatsApp()">Contact Us</button>
-</div>
-        <div class="card">
-  <h3>4nd Class</h3>
-  <span class="type">Subjects  <span class="key-icon" onclick="toggleSubjects(this)">></span>
-
-  <!-- Hidden subjects list -->
-  <ul class="subjects-list">
-    <li>Maths</li>
-    <li>English</li>
-    <li>EVS/Science/Social Science</li>
-    <li>Hindi</li>
-    <li>GK</li>
-    
-  </ul></span>
-
-
-  <button onclick="openWhatsApp()">Contact Us</button>
-</div>
-        <div class="card">
-  <h3>4th Class</h3>
-  <span class="type">Subjects  <span class="key-icon" onclick="toggleSubjects(this)">></span>
-
-  <!-- Hidden subjects list -->
-  <ul class="subjects-list">
-    <li>Maths</li>
-    <li>English</li>
-    <li>EVS/Science/Social Science</li>
-    <li>Hindi</li>
-    <li>GK</li>
-    
-  </ul></span>
-
-
-  <button onclick="openWhatsApp()">Contact Us</button>
-</div>
-        <div class="card">
-  <h3>6th Class</h3>
-  <span class="type">Subjects  <span class="key-icon" onclick="toggleSubjects(this)">></span>
-
-  <!-- Hidden subjects list -->
-  <ul class="subjects-list">
-    <li>Math</li>
-    <li>English</li>
-    <li>Science</li>
-    <li>Social Science</li>
-    
-  </ul></span>
-
-
-  <button onclick="openWhatsApp()">Contact Us</button>
-</div>
-        <div class="card">
-  <h3>7th Class</h3>
-  <span class="type">Subjects  <span class="key-icon" onclick="toggleSubjects(this)">></span>
-
-  <!-- Hidden subjects list -->
-  <ul class="subjects-list">
-    <li>Maths</li>
-    <li>English</li>
-    <li>Science</li>
-    <li>Social Science</li>
-    
-  </ul></span>
-
-
-  <button onclick="openWhatsApp()">Contact Us</button>
-</div>
-        <div class="card">
-  <h3>8th Class</h3>
-  <span class="type">Subjects  <span class="key-icon" onclick="toggleSubjects(this)">></span>
-
-  <!-- Hidden subjects list -->
-  <ul class="subjects-list">
-    <li>Maths</li>
-    <li>English</li>
-    <li>Science</li>
-    <li>Social Science</li>
-    
-  </ul></span>
-
-
-  <button onclick="openWhatsApp()">Contact Us</button>
-</div>
+    <div class="card">
+      <h3>8th Class</h3>
+      <span class="type">Subjects <span class="key-icon" onclick="toggleSubjects(this)">></span>
+        <ul class="subjects-list">
+          <li>Maths</li>
+          <li>English</li>
+          <li>Science</li>
+          <li>Social Science</li>
+        </ul>
+      </span>
+      <button onclick="openWhatsApp()">Contact Us</button>
+    </div>
   </div>
 </section>
 
@@ -434,9 +532,7 @@
   <p>© 2025 Verma Classes | All Rights Reserved</p>
 </footer>
 
-<!-- Accessibility -->
 <div class="accessibility" onclick="toggleMenu()">☰</div>
-<!-- MODIFICATION: Removed the High Contrast button -->
 <div class="menu" id="menu">
   <button style="font-size: large;" onclick="increaseFont()">Increase Font</button>
   <button style="font-size: large;" onclick="decreaseFont()">Decrease Font</button>
@@ -450,7 +546,7 @@
 
 <script>
   function openWhatsApp() {
-    window.open("https://wa.me/918595661408?text=Hello! I want to book a tuition class.","_blank");
+    window.open("https://wa.me/918595661408?text=Hello! I want to book a tuition class.", "_blank");
   }
 
   function toggleMenu() {
@@ -461,32 +557,25 @@
   function increaseFont() {
     document.body.style.fontSize = "larger";
   }
+
   function decreaseFont() {
     document.body.style.fontSize = "smaller";
   }
 
-  // MODIFICATION: Removed the toggleContrast function
-  
-  // MODIFICATION: Rewrote toggleDarkMode function to be more robust
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
   }
 
-  // SCRIPT FOR PARALLAX EFFECT
   window.addEventListener('scroll', function() {
     const heroSection = document.querySelector('.hero');
     let scrollPosition = window.pageYOffset;
     heroSection.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
   });
 
-
-
   function toggleSubjects(icon) {
-  let card = icon.closest(".card");
-  card.classList.toggle("open");
-}
-
-  
+    let card = icon.closest(".card");
+    card.classList.toggle("open");
+  }
 </script>
 
 </body>
